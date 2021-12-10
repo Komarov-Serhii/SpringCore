@@ -5,77 +5,90 @@ import com.spring.model.Category;
 import com.spring.model.Event;
 import com.spring.model.Ticket;
 import com.spring.model.User;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import com.spring.service.BookingService;
+import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import java.sql.Date;
 import java.util.List;
 
+@Service
+@AllArgsConstructor
 public class BookingFacadeImpl implements BookingFacade {
+
+    @Autowired
+    BookingService bookingService;
+
+
     @Override
     public Event getEventById(long eventId) {
-        return null;
+        return bookingService.getEventById(eventId);
     }
 
     @Override
     public List<Event> getEventsByTitle(String title, int pageSize, int pageNum) {
-        return null;
+        return bookingService.getEventsByTitle(title, pageSize, pageNum);
     }
 
     @Override
     public List<Event> getEventsForDay(Date day, int pageSize, int pageNum) {
-        return null;
+        return bookingService.getEventsForDay(day, pageSize, pageNum);
     }
 
     @Override
     public Event createEvent(Event event) {
-        return null;
+        return bookingService.createEvent(event);
     }
 
     @Override
     public Event updateEvent(Event event) {
-        return null;
+        return bookingService.updateEvent(event);
     }
 
     @Override
     public boolean deleteEvent(long eventId) {
-        return false;
+        return bookingService.deleteEvent(eventId);
     }
+
+
+
+
 
     @Override
     public User getUserById(long userId) {
-        return null;
+        return bookingService.getUserById(userId);
     }
 
     @Override
     public User getUserByEmail(String email) {
-        return null;
+        return bookingService.getUserByEmail(email);
     }
 
     @Override
     public List<User> getUsersByName(String name, int pageSize, int pageNum) {
-        return null;
+        return bookingService.getUsersByName(name, pageSize, pageNum);
     }
 
     @Override
     public User createUser(User user) {
-        return null;
+        return bookingService.createUser(user);
     }
 
     @Override
     public User updateUser(User user) {
-        return null;
+        return bookingService.updateUser(user);
     }
 
     @Override
     public boolean deleteUser(long userId) {
-        return false;
+        return bookingService.deleteUser(userId);
     }
+
+
 
     @Override
     public Ticket bookTicket(long userId, long eventId, int place, Category category) {
-        return null;
+        return bookingService.bookTicket(userId,eventId,place,category);
     }
 
     @Override
@@ -92,66 +105,5 @@ public class BookingFacadeImpl implements BookingFacade {
     public boolean cancelTicket(long ticketId) {
         return false;
     }
-
-
-    public static void main(String[] args) {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        int a = 0;
-        int b = 0;
-        int h = 0;
-        try {
-            String str = reader.readLine();
-            if (check(str)) {
-                a = Integer.parseInt(str);
-            }
-            else {
-                String string = reader.readLine();
-                a = Integer.parseInt(string);
-            }
-            String str1 = reader.readLine();
-            if (check(str1)) {
-                b = Integer.parseInt(str1);
-            }
-            String str2 = reader.readLine();
-            if (check(str2)) {
-                h = Integer.parseInt(str2);
-            }
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        int fut = 0;
-        int day = 0;
-
-        if (a > 0 && b > 0 && h > 0) {
-            if (a < b) {
-                System.out.println("Impossible");
-            }
-
-            while (fut <= h) {
-                day++;
-                fut += a;
-                if (fut >= h) {
-                    break;
-                }
-                if (a == b) {
-                    System.out.println("Impossible");
-                    System.exit(0);
-                }
-                fut -= b;
-            }
-            System.out.println(day);
-        }
-    }
-
-
-
-    public static boolean check(String str) {
-        if (str.matches("\\d+")) {
-            return true;
-        }
-        return false;
-    }
-
 
 }

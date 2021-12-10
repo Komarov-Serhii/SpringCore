@@ -4,9 +4,11 @@ import com.spring.model.Category;
 import com.spring.model.Event;
 import com.spring.model.Ticket;
 import com.spring.model.User;
+import org.springframework.stereotype.Service;
 
 import java.sql.Date;
 import java.util.List;
+
 
 public interface BookingService {
 
