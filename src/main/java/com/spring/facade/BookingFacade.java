@@ -153,4 +153,8 @@ public interface BookingFacade {
      */
     boolean cancelTicket(long ticketId);
 
+
+    Ticket updateTicket(Ticket ticket);
+
+
 }

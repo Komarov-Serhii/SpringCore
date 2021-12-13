@@ -5,11 +5,15 @@ import com.spring.model.Event;
 import com.spring.model.Ticket;
 import com.spring.model.User;
 import com.spring.repository.EventRepository;
+import com.spring.repository.EventRepositoryImpl;
 import com.spring.repository.TicketRepository;
 import com.spring.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.sql.Date;
 import java.util.List;
@@ -20,14 +24,27 @@ public class BookingServiceImpl implements BookingService {
     @Autowired
     UserRepository userRepository;
 
-    @Autowired
+
     EventRepository eventRepository;
 
-    @Autowired
     TicketRepository ticketRepository;
+
+
+    public BookingServiceImpl(TicketRepository ticketRepository) {
+        this.ticketRepository = ticketRepository;
+    }
+
+    @Autowired
+    public void setEngine(EventRepository eventRepository) {
+        this.eventRepository = eventRepository;
+    }
+
+    private Logger logger = LogManager.getLogger(BookingServiceImpl.class);
+
 
     @Override
     public Event getEventById(long eventId) {
+        logger.info("logger");
         return (Event) eventRepository.findById(eventId);
     }
 
@@ -103,6 +120,11 @@ public class BookingServiceImpl implements BookingService {
 
     @Override
     public boolean cancelTicket(long ticketId) {
-        return false;
+        return ticketRepository.deleteById(ticketId);
+    }
+
+    @Override
+    public Ticket updateTicket(Ticket ticket) {
+        return ticketRepository.update(ticket);
     }
 }

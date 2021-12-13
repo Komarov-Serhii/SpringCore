@@ -1,0 +1,30 @@
+2021-12-13 17:25:03,587 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.0.0.Alpha9
+2021-12-13 17:25:03,786 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-13 17:25:04,407 INFO SQL dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-12-13 17:25:06,602 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-13 17:25:06,674 INFO c.s.s.BookingServiceImpl [main] logger
+2021-12-13 18:25:53,683 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.0.0.Alpha9
+2021-12-13 18:25:53,800 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-13 18:25:54,023 INFO SQL dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-12-13 18:25:54,675 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-13 18:25:54,720 INFO c.s.s.BookingServiceImpl [main] logger
+2021-12-13 18:36:53,994 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.0.0.Alpha9
+2021-12-13 18:36:54,130 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-13 18:36:54,337 INFO SQL dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-12-13 18:36:54,987 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-13 18:36:55,046 INFO c.s.s.BookingServiceImpl [main] logger
+2021-12-13 18:37:18,006 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.0.0.Alpha9
+2021-12-13 18:37:18,154 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-13 18:37:18,386 INFO SQL dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-12-13 18:37:19,008 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-13 18:37:19,058 INFO c.s.s.BookingServiceImpl [main] logger
+2021-12-13 18:37:34,489 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.0.0.Alpha9
+2021-12-13 18:37:34,580 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-13 18:37:34,751 INFO SQL dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-12-13 18:37:35,301 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-13 18:37:35,349 INFO c.s.s.BookingServiceImpl [main] logger
+2021-12-13 18:38:42,405 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.0.0.Alpha9
+2021-12-13 18:38:42,529 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-13 18:38:42,727 INFO SQL dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-12-13 18:38:43,301 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-13 18:38:43,353 INFO c.s.s.BookingServiceImpl [main] logger

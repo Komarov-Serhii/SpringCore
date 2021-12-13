@@ -154,4 +154,6 @@ public interface BookingService {
      */
     boolean cancelTicket(long ticketId);
 
+    Ticket updateTicket(Ticket ticket);
+
 }

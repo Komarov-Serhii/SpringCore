@@ -1,11 +1,17 @@
 package com.spring.repository;
 
 import com.spring.model.Event;
+import com.spring.model.Ticket;
+import com.spring.model.User;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import java.sql.Date;
 import java.util.List;
 
@@ -18,7 +24,7 @@ public class EventRepositoryImpl implements EventRepository {
 
     @Override
     public Object findById(Long id) {
-        return null;
+        return sessionFactory.getCurrentSession().get(Event.class, id);
     }
 
     @Override
@@ -35,21 +41,34 @@ public class EventRepositoryImpl implements EventRepository {
 
     @Override
     public List<Event> findAll() {
-        return null;
-    }
+        CriteriaBuilder cb = sessionFactory.getCriteriaBuilder();
+        CriteriaQuery<Event> cq = cb.createQuery(Event.class);
+        Root<Event> rootEntry = cq.from(Event.class);
+        CriteriaQuery<Event> all = cq.select(rootEntry);
 
+        TypedQuery<Event> allQuery = sessionFactory.getCurrentSession().createQuery(all);
+        return allQuery.getResultList();
+    }
     @Override
     public Event update(Event entity) {
-        return null;
+        Event event = sessionFactory.getCurrentSession().get(Event.class, entity.getId());
+        event.setDate(entity.getDate());
+        event.setTitle(entity.getTitle());
+        sessionFactory.getCurrentSession().merge(event);
+        return event;
     }
 
     @Override
     public boolean deleteById(Long id) {
-        return false;
+        Event event = sessionFactory.getCurrentSession().load(Event.class,id);
+        sessionFactory.getCurrentSession().delete(event);
+        sessionFactory.getCurrentSession().flush() ;
+        return true;
     }
 
     @Override
     public Event save(Event entity) {
-        return null;
+        sessionFactory.getCurrentSession().save(entity);
+        return entity;
     }
 }

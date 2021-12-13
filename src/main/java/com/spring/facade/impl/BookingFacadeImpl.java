@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import java.sql.Date;
 import java.util.List;
 
-@Service
+
 @AllArgsConstructor
 public class BookingFacadeImpl implements BookingFacade {
 
@@ -103,7 +103,12 @@ public class BookingFacadeImpl implements BookingFacade {
 
     @Override
     public boolean cancelTicket(long ticketId) {
-        return false;
+        return bookingService.cancelTicket(ticketId);
+    }
+
+    @Override
+    public Ticket updateTicket(Ticket ticket) {
+        return bookingService.updateTicket(ticket);
     }
 
 }
